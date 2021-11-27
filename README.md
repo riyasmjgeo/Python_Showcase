@@ -1,2 +1,2 @@
-# Python_Showcase
+# Python Showcase
 Showcase of my Python applications.
