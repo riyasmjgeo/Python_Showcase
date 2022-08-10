@@ -73,7 +73,8 @@ def plot_digit():
             tex += numbers[x][y]+ "   "                
         tex += "\n"
     clearScreen()
-    print('\n'+colors[chosen_color][0]+tex+colors[chosen_color][1]+'\n')
+    # print('\n'+colors[chosen_color][0]+tex+colors[chosen_color][1]+'\n')
+    print('\n'+colors[chosen_color][0]+tex+colors[chosen_color][1])
     
 # Finding minute digits
 def find_c1c2():
