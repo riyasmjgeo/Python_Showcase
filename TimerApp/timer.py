@@ -107,7 +107,6 @@ while mins!=0:
         sleep(1)
 
 clearScreen()
-
 print(colors[chosen_color][0]+
     '   *******     **      **   ********   *******  \n'+
     '  **/////**   /**     /**  /**/////   /**////** \n'+
@@ -119,3 +118,6 @@ print(colors[chosen_color][0]+
     '  ///////         //       ////////   //     // '+
     colors[chosen_color][1]
     )
+
+# A system notification
+system('notify-send "Timer finished!" "Time to stretch a bit"')
