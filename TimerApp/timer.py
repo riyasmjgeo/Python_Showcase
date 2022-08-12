@@ -1,18 +1,14 @@
 from time import sleep
 from os import system, name
-from sys import argv, exit
 import argparse
 
-def createParser():
-    parser = argparse.ArgumentParser( description='Application to start a timer')
-
-    parser.add_argument('-t', dest='time', type=int, required=True,
-            help='Time in minutes')
-    parser.add_argument('-c', dest='color', type=str, required=True,
-            help='Color of the clock')
-    return parser
-
-inps =  createParser().parse_args()
+# Reading user inputs
+parser = argparse.ArgumentParser( description='Application to start a timer')
+parser.add_argument('-t', dest='time', type=int, required=True,
+        help='Time in minutes')
+parser.add_argument('-c', dest='color', type=str, required=True,
+        help='Color of the clock')
+inps =  parser.parse_args()
 mins = inps.time
 chosen_color = inps.color
 
@@ -73,9 +69,8 @@ def plot_digit():
             tex += numbers[x][y]+ "   "                
         tex += "\n"
     clearScreen()
-    # print('\n'+colors[chosen_color][0]+tex+colors[chosen_color][1]+'\n')
     print('\n'+colors[chosen_color][0]+tex+colors[chosen_color][1])
-    
+
 # Finding minute digits
 def find_c1c2():
     str_min = str(mins)
@@ -120,4 +115,4 @@ print(colors[chosen_color][0]+
     )
 
 # A system notification
-system('notify-send "Timer finished!" "Time to stretch a bit"')
+system('notify-send --hint int:transient:1 "Timer finished!" "Time to stretch a bit"')
